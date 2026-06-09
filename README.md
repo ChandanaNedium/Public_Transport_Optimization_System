@@ -1,12 +1,10 @@
 # RouteSync: Public Transport Optimisation System
-### 🎓 College DBMS Mini Project & Viva Submission
 
 RouteSync is a complete, full-stack database management system application designed to model and optimize public urban transportation. It handles passenger profiles, driver rosters, vehicle fleets, route pathways, transit schedules, stopping checkpoints, and ticket reservations. The project strongly emphasizes relational database integrity, normalized database schemas, constraints, multi-table joins, precompiled views, automated triggers, and transaction-safe stored procedures.
 
 ---
 
-## 🚀 Key DBMS Features (Viva Essentials)
-Your examiner will inspect these primary database mechanisms implemented in **`database/schema.sql`**:
+## 🚀 Key DBMS Features 
 
 1. **Relational Database Design**: A fully normalized relational schema structured up to **3rd Normal Form (3NF)**, ensuring zero data redundancy.
 2. **Referential Integrity constraints**: Robust foreign key constraints with `ON DELETE CASCADE` and `ON DELETE SET NULL` policies to safeguard against orphaned records.
@@ -66,7 +64,6 @@ RouteSync/
 ## ⚡ Setup & Execution Instructions
 
 ### Prerequisites
-Ensure you have the following installed:
 - **Node.js** (v18.0.0 or higher)
 - **MySQL Server** (v5.8 or higher)
 - **MySQL Workbench** or any equivalent SQL client
@@ -127,8 +124,7 @@ Ensure you have the following installed:
 
 ---
 
-## 👥 Demo Logins for Examiner Review
-Use these pre-loaded accounts to demonstrate both modules during your viva:
+## 👥 Demo Logins
 
 ### 🛠️ Administrative Console
 *   **Username**: `admin@routesync.com`
@@ -143,7 +139,7 @@ Use these pre-loaded accounts to demonstrate both modules during your viva:
 ---
 
 ## 🧪 Postman API Collection
-We have provided a complete **`postman_collection.json`** file in the root directory.
+> complete **`postman_collection.json`** file in the root directory.
 Import it into Postman to run automated API verification:
 1. Open Postman.
 2. Click **Import** in the top left corner.
@@ -153,7 +149,6 @@ Import it into Postman to run automated API verification:
 ---
 
 ## 🎓 Viva Questions Checklist
-Be prepared to answer these common questions during your demonstration:
 
 1. **How is the seat capacity constraint enforced?**
    - *Answer*: It is handled at the database level by the `check_seat_availability` trigger. Before a ticket is inserted, the trigger counts the existing rows in `ticket` for that schedule on that date, compares it with the `capacity` in the `vehicle` table, and raises an exception using `SIGNAL SQLSTATE '45000'` if the vehicle is fully booked.
