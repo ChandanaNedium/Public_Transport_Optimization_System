@@ -147,7 +147,7 @@ Import it into Postman to run automated API verification:
 
 ---
 
-## 🎓 Viva Questions Checklist
+## 🎓 Viva Questions 
 
 1. **How is the seat capacity constraint enforced?**
    - *Answer*: It is handled at the database level by the `check_seat_availability` trigger. Before a ticket is inserted, the trigger counts the existing rows in `ticket` for that schedule on that date, compares it with the `capacity` in the `vehicle` table, and raises an exception using `SIGNAL SQLSTATE '45000'` if the vehicle is fully booked.
