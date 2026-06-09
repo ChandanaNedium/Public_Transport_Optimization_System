@@ -102,8 +102,7 @@ RouteSync/
 4. Start the Express server in Developer Live-Reload Mode:
    ```bash
    npm run dev
-   ```
-   *Note: If MySQL is not running or credentials are wrong, RouteSync will activate its **Simulated Mock Database Fallback**. The app will still work beautifully in mock memory for your demonstration!*
+   ``` 
 
 ---
 
